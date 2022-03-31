@@ -19,13 +19,16 @@ from django.urls import path, include
 from rest_framework import routers
 
 from fruit.api import viewsets as fruitviewset
+from region.api import viewsets as regionviewset
 
 route = routers.DefaultRouter()
 
 route.register(r'fruit', fruitviewset.FruitViewSet, basename="Fruits")
+route.register(r'region', regionviewset.RegionViewSet, basename="Regions")
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(route.urls))
 ]
+
