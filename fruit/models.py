@@ -5,3 +5,4 @@ from uuid import uuid4
 class Fruit(models.Model):
     id_fruit = models.UUIDField(primary_key =True, default = uuid4, editable=False)
     name_fruit = models.CharField(max_length=255)
+    name_region = models.ForeignKey(region,  related_name='region', on_delete=models.CASCADE)
